@@ -32,13 +32,33 @@ const LandingPage: FunctionComponent<Props> = (props) => {
               </div>
 
           </section>
-          <div className={s.services}>
+          <section className={s.services}>
               <ServiceItem/>
               <ServiceItem/>
               <ServiceItem/>
               <ServiceItem/>
               <ServiceItem/>
-          </div>
+          </section>
+
+          <section className={s.done_projects}>
+              <div className={s.done_projects_description}>Проекты, компании, корпорации, исполнители, артисты, люди. Люди обращаются к нам, когда необходимо предоставить лучший результат и права на ошибку — нет.</div>
+              <div className={s.block}>
+                  <ServiceItem/>
+                  <ServiceItem/>
+              </div>
+          </section>
+
+          <section className={s.news}>
+              <div className={s.header}>
+                  <div className={s.title}>Статьи от авторов 0xHearts</div>
+                  <div className={s.more}>Открыть блог</div>
+              </div>
+              <div className={s.blocks}>
+
+              </div>
+          </section>
+
+
       </>
   );
 };
