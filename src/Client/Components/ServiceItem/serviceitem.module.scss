@@ -1,0 +1,26 @@
+.service{
+  width: 100%;
+  padding: 24px;
+  background: #03020B;
+  border: 1px solid #212035;
+  border-radius: 16px;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 200px;
+  &:first-child{
+    grid-row-start: 1;
+    grid-column-start: 1;
+
+    grid-row-end: 2;
+    grid-column-end: 3;
+  }
+  &_text{
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 36px;
+    letter-spacing: -0.01em;
+    color: #F9F9F9;
+
+  }
+}
