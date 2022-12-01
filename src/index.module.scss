@@ -3,6 +3,8 @@ body{
 }
 *{
   box-sizing: border-box;
+  font-family: "Suisse", sans-serif;
+  font-weight: 400;
 }
 
 .container{
@@ -13,4 +15,16 @@ body{
 
 div{
   color: #F9F9F9;
+}
+
+@font-face {
+  font-family: "Suisse";
+  src: url("./Assets/Fonts/SUISSEINTL-REGULAR.OTF");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Suisse";
+  src: url("./Assets/Fonts/SUISSEINTL-BOOK.OTF");
+  font-weight: 450;
 }

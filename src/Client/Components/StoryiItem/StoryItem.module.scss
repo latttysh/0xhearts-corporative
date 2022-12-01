@@ -1,0 +1,32 @@
+.story{
+  height: 360px;
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-direction: column;
+  background: linear-gradient(0deg, rgba(2, 4, 22, 0.72), rgba(2, 4, 22, 0.72));
+  border-radius: 12px;
+  padding: 16px;
+  object-fit: cover;
+  .title{
+    font-weight: 450;
+    font-size: 24px;
+    line-height: 36px;
+    letter-spacing: -0.01em;
+    color: #F9F9F9;
+    max-width: 90%;
+  }
+  .category{
+    padding: 8px 24px;
+    font-weight: 450;
+    font-size: 18px;
+    line-height: 32px;
+    color: #F9F9F9;
+
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(20px);
+    border-radius: 36px;
+
+  }
+}

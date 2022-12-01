@@ -6,6 +6,8 @@ import PrimaryButton from "../../Components/Buttons/PrimaryButton/PrimaryButton"
 import animbg from "../../Assets/img/bg-anim.gif"
 import Typewriter from 'typewriter-effect';
 import ServiceItem from "../../Components/ServiceItem/ServiceItem";
+import StoryItem from "../../Components/StoryiItem/StoryItem";
+import Footer from "../../Components/Footer/Footer";
 
 interface OwnProps {}
 
@@ -18,7 +20,17 @@ const LandingPage: FunctionComponent<Props> = (props) => {
           <section className={s.hero}>
               <div className={s.hero_title}><div>Мы делаем превосходные  </div><Typewriter
                   options={{
-                      strings: ['лендинги', 'сервисы', "обложки", "оформления"],
+                      strings: [
+                          "лендинги",
+                          "анимации",
+                         "веб-сайты",
+                          "обложки",
+                          "логотипы",
+                          "телеграм-боты",
+                          "афиши и проморолики",
+                          "NFT-коллекции",
+                          "интерфейсы",
+                      ],
                       autoStart: true,
                       loop: true,
                   }}
@@ -54,9 +66,18 @@ const LandingPage: FunctionComponent<Props> = (props) => {
                   <div className={s.more}>Открыть блог</div>
               </div>
               <div className={s.blocks}>
-
+                  <StoryItem title={"Всё, что вы должны знать когда работаете со студиями и агентствами"} category={"Личный опыт"} isMain={true}/>
+                  <StoryItem title={"Всё, что вы должны знать когда работаете со студиями и агентствами"} category={"Личный опыт"} isMain={false}/>
+                  <StoryItem title={"Всё, что вы должны знать когда работаете со студиями и агентствами"} category={"Личный опыт"} isMain={false}/>
               </div>
           </section>
+
+
+          <section>
+              РАБОТНИКИ
+          </section>
+
+          <Footer/>
 
 
       </>
