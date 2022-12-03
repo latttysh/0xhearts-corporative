@@ -1,0 +1,22 @@
+.work{
+  max-width: 320px;
+  cursor: pointer;
+  .img{
+    margin-bottom: 12px;
+  }
+  .title{
+    font-weight: 450;
+    font-size: 18px;
+    line-height: 32px;
+    color: #FFFFFF;
+    margin-bottom: 3px;
+  }
+  .author{
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #A7A7D1;
+  }
+}

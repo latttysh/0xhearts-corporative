@@ -77,8 +77,6 @@ const LandingPage: FunctionComponent<Props> = (props) => {
               РАБОТНИКИ
           </section>
 
-          <Footer/>
-
 
       </>
   );
