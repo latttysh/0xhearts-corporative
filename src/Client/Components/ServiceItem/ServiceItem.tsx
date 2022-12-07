@@ -1,19 +1,24 @@
 import React, { FunctionComponent } from 'react';
 import s from "./serviceitem.module.scss"
 import SecondaryButton from "../Buttons/SecondaryButton/SecondaryButton";
-interface OwnProps {}
+import {useNavigate} from "react-router-dom";
+interface OwnProps {
+    title: string
+    img? :string
+}
 
 type Props = OwnProps;
 
 const ServiceItem: FunctionComponent<Props> = (props) => {
+    const navigate = useNavigate()
 
   return (
       <div className={s.service}>
+          {props.img &&  <img src={props.img} alt="bg" className={s.bg}/>}
           <div className={s.service_text}>
-              2D-Графика, обложки, афиши,
-              промо и анимации
+              {props.title}
           </div>
-          <SecondaryButton title={"Смотреть"} action={()=>console.log(132)}/>
+          <SecondaryButton title={"Смотреть"} action={()=>navigate("/portfolio")}/>
 
       </div>
   );

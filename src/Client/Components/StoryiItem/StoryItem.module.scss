@@ -9,6 +9,11 @@
   border-radius: 12px;
   padding: 16px;
   object-fit: cover;
+  cursor: pointer;
+  transition: all .2s ease-in-out;
+  &:hover{
+    filter: brightness(120%);
+  }
   .title{
     font-weight: 450;
     font-size: 24px;
@@ -27,6 +32,9 @@
     background: rgba(255, 255, 255, 0.12);
     backdrop-filter: blur(20px);
     border-radius: 36px;
-
+    transition: all .2s ease-in-out;
+    &:hover{
+      transform: translateY(-2px);
+    }
   }
 }

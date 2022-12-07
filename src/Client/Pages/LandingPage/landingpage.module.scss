@@ -86,6 +86,10 @@
       line-height: 32px;
       color: #2697FF;
       cursor: pointer;
+      transition: all .2s ease-in-out;
+      &:hover{
+        transform: translateX(5px);
+      }
     }
   }
   .blocks{

@@ -1,0 +1,45 @@
+.contacts{
+  .title{
+    font-weight: 450;
+    font-size: 48px;
+    line-height: 56px;
+    letter-spacing: -0.01em;
+    color: #F9F9F9;
+    margin-bottom: 64px;
+  }
+  .block{
+    width: 80%;
+    .item{
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      margin-bottom: 48px;
+      &_title{
+        font-weight: 400;
+        font-size: 32px;
+        //line-height: 48px;
+        letter-spacing: -0.01em;
+        color: #F9F9F9;
+      }
+      .description{
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        width: 60%;
+        max-height: 152px;
+        flex-wrap: wrap;
+        span{
+          font-weight: 400;
+          font-size: 32px;
+          line-height: 48px;
+          letter-spacing: -0.01em;
+          color: #F9F9F9;
+        }
+        .underline{
+          text-decoration: underline;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}

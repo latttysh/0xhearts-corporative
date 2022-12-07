@@ -6,6 +6,7 @@ import PrimaryButton from "../../Components/Buttons/PrimaryButton/PrimaryButton"
 import SecondaryButton from "../../Components/Buttons/SecondaryButton/SecondaryButton";
 import PortfolioItem from "../../Components/PortfolioItem/PortfolioItem";
 import ServiceItem from "../../Components/ServiceItem/ServiceItem";
+
 interface OwnProps {}
 
 type Props = OwnProps;
@@ -68,9 +69,11 @@ const PortfolioPage: FunctionComponent<Props> = (props) => {
           </div>
 
           <div className={s.block_service}>
-                  <ServiceItem/>
-                  <ServiceItem/>
-                  <ServiceItem/>
+                  <ServiceItem title={"2D-Графика, обложки, афиши, \n" +
+                      "промо и анимации"}/>
+                  <ServiceItem title={"3D-Графика, NFT, анимация и \n" +
+                      "визуализация"}/>
+                  <ServiceItem title={"Брендинг, упаковка продукта, фирменный стиль"}/>
           </div>
       </div>
   );

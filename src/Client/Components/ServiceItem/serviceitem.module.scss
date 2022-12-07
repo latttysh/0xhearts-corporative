@@ -1,13 +1,23 @@
 .service{
   width: 100%;
   padding: 24px;
-  background: #03020B;
+  //background: #03020B;
   border: 1px solid #212035;
   border-radius: 16px;
   display: flex;
   align-items: flex-start;
+  justify-content: space-between;
   flex-direction: column;
   gap: 200px;
+  position: relative;
+  overflow: hidden;
+  .bg{
+    position: absolute;
+    right: 0;
+    z-index: -1;
+    bottom: -24px;
+    //width: 60%;
+  }
   &:first-child{
     grid-row-start: 1;
     grid-column-start: 1;
