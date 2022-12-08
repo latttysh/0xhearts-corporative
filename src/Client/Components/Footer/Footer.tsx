@@ -32,7 +32,6 @@ const Footer: FunctionComponent<Props> = (props) => {
                       <textarea placeholder={"Описание вашей задачи"} />
                       <button>Отправить нам</button>
                   </form>
-
               </div>
           </div>
           <div className={s.stats}>

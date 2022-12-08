@@ -98,3 +98,22 @@
     gap: 40px;
   }
 }
+
+@media (max-width: 1120px) {
+  .hero {
+    &_title {
+      div {
+        font-size: 40px;
+      }
+    }
+  }
+}
+
+@media (max-width: 1000px) {
+  .hero {
+    &_title {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}
