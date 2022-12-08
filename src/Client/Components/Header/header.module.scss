@@ -1,51 +1,72 @@
-.header{
+.header {
   padding: 40px 10px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin-bottom: 24px;
-  .menu{
+  .menu {
     display: flex;
     align-items: center;
     gap: 24px;
-    .navigation{
+    .navigation {
       display: flex;
       align-items: center;
       gap: 24px;
-      a{
+      a {
         text-decoration: none;
       }
-      &_item{
+      &_item {
         font-weight: 450;
         font-size: 18px;
         line-height: 32px;
         cursor: pointer;
-        transition: all .2s ease-in-out;
-        &:hover{
-          text-shadow: 0px 0px 6px rgba(255, 255, 255, 0.25), 0px 0px 15px rgba(255, 255, 255, 0.3), 0px 0px 30px #FFFFFF;
+        transition: all 0.2s ease-in-out;
+        &:hover {
+          text-shadow: 0px 0px 6px rgba(255, 255, 255, 0.25), 0px 0px 15px rgba(255, 255, 255, 0.3),
+            0px 0px 30px #ffffff;
         }
       }
     }
   }
-  .actions{
+  .actions {
     display: flex;
     align-items: center;
     gap: 40px;
-    .language{
+    .language {
       display: flex;
       align-items: center;
       gap: 8px;
       cursor: pointer;
-      &_text{
+      &_text {
         font-weight: 450;
         font-size: 18px;
         line-height: 32px;
       }
-      &_flag{
+      &_flag {
         width: 20px;
         height: 20px;
         border-radius: 100px;
         overflow: hidden;
+      }
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .header {
+    .menu {
+      .navigation {
+        display: none;
+      }
+    }
+  }
+}
+
+@media (max-width: 650px) {
+  .header {
+    .actions {
+      .language {
+        display: none;
       }
     }
   }
