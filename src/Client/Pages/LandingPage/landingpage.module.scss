@@ -114,6 +114,51 @@
     &_title {
       display: flex;
       flex-direction: column;
+      text-align: center;
+    }
+  }
+}
+
+@media (max-width: 850px) {
+  .news {
+    .blocks {
+      flex-direction: column;
+    }
+  }
+}
+
+@media (max-width: 670px ) {
+  .news {
+    padding: 0;
+    .header {
+      flex-direction: column;
+      text-align: center;
+      .title {
+        font-size: 26px;
+      }
+      .more {
+        font-size: 15px;
+      }
+    }
+  }
+  .services {
+    display: flex;
+    flex-direction: column;
+  }
+  .done_projects {
+    .block {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}
+
+@media (max-width: 450px ) {
+  .hero {
+    &_title {
+      div {
+        font-size: 26px;
+      }
     }
   }
 }
