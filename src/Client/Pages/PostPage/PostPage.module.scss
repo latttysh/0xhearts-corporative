@@ -1,0 +1,34 @@
+.post{
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 30px;
+  margin-bottom: 64px;
+  .content{
+    flex: 80%;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 28px;
+    color: #F9F9F9;
+    img{
+      width: 100%;
+      border-radius: 16px;
+      height: 250px;
+      object-fit: cover;
+    }
+    .title{
+      font-weight: 450;
+      font-size: 48px;
+      line-height: 64px;
+      letter-spacing: -0.01em;
+      color: #F9F9F9;
+    }
+  }
+  .author{
+    flex: 20%;
+    font-weight: 450;
+    font-size: 18px;
+    line-height: 32px;
+    color: #F9F9F9;
+  }
+}

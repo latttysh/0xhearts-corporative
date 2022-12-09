@@ -20,7 +20,15 @@ const PostPage: FunctionComponent<Props> = (props) => {
     },[])
   return (
       <>
-          <ReactMarkdown children={blogState.post.text} remarkPlugins={[remarkGfm]} />
+          <div className={s.post}>
+              <div className={s.content}>
+                  <div className={s.title}>{blogState.post.title}</div>
+                  <ReactMarkdown children={blogState.post.text} remarkPlugins={[remarkGfm]} />
+              </div>
+              <div className={s.author}>
+                  {blogState.post.author}
+              </div>
+          </div>
       </>
   );
 };
