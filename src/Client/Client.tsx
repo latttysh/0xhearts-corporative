@@ -6,6 +6,7 @@ import Footer from "./Components/Footer/Footer";
 import PortfolioPage from "./Pages/PortfolioPage/PortfolioPage";
 import BlogPage from "./Pages/BlogPage/BlogPage";
 import ContactsPage from "./Pages/ContactsPage/ContactsPage";
+import PostPage from "./Pages/PostPage/PostPage";
 
 interface OwnProps {
 }
@@ -22,6 +23,7 @@ const Client: FunctionComponent<Props> = (props) => {
                 <Route path={"/portfolio"} element={<PortfolioPage/>}/>
                 <Route path={"/blog"} element={<BlogPage/>}/>
                 <Route path={"/contacts"} element={<ContactsPage/>}/>
+                <Route path={"/post/:id"} element={<PostPage/>}/>
             </Routes>
             <Footer/>
         </>

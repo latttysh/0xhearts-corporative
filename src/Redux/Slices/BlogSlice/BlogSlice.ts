@@ -1,10 +1,20 @@
 import { initialStateType} from "./BlogSliceTypes";
 import {createSlice} from "@reduxjs/toolkit";
-import {getPosts} from "./BlogAsyncActions";
+import {getPost, getPosts} from "./BlogAsyncActions";
 
 const initialState:initialStateType = {
     status: "idle",
-    posts: []
+    posts: [],
+    post: {
+        createdAt: "",
+        category: "",
+        author: "",
+        title: "",
+        id: 0,
+        cover_ing: "",
+        text: "",
+        updatedAt: ""
+    }
 }
 
 const blogSlice = createSlice({
@@ -20,6 +30,17 @@ const blogSlice = createSlice({
             state.posts = action.payload
         })
         builder.addCase(getPosts.rejected, (state,action) => {
+            state.status = "error"
+        })
+
+        builder.addCase(getPost.pending, (state,action) => {
+            state.status = "loading"
+        })
+        builder.addCase(getPost.fulfilled, (state,action) => {
+            state.status = "loaded"
+            state.post = action.payload
+        })
+        builder.addCase(getPost.rejected, (state,action) => {
             state.status = "error"
         })
     }

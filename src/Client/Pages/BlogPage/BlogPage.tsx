@@ -6,6 +6,7 @@ import {useAppDispatch} from "../../../Redux/store";
 import {getPosts} from "../../../Redux/Slices/BlogSlice/BlogAsyncActions";
 import {useSelector} from "react-redux";
 import {blogType} from "../../../Redux/Slices/BlogSlice/BlogSliceTypes";
+import {NavLink} from "react-router-dom";
 interface OwnProps {}
 
 type Props = OwnProps;
@@ -25,7 +26,10 @@ const BlogPage: FunctionComponent<Props> = (props) => {
           <div className={s.news}>
               {
                   blogState.posts.map((post: blogType) => {
-                      return <BlogItem title={post.title} author={post.author} category={post.category} time={post.createdAt}/>
+                      return (
+                      <NavLink to={`/post/${post.id}`}>
+                          <BlogItem title={post.title} author={post.author} category={post.category} time={post.createdAt}/>
+                      </NavLink>)
                   })
               }
           </div>

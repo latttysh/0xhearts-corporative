@@ -1,6 +1,7 @@
 export interface initialStateType {
     status: string
     posts: blogType[]
+    post: blogType
 }
 
 export interface blogType{
@@ -12,4 +13,12 @@ export interface blogType{
     author: string
     createdAt: string
     updatedAt: string
+}
+
+export interface newPostData{
+    title: string
+    text: string
+    author: string
+    cover_img: string
+    category: string
 }
