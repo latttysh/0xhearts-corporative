@@ -58,3 +58,33 @@
     gap: 40px;
   }
 }
+
+@media (max-width: 400px ) {
+  .portfolio {
+    .block {
+      .buttons {
+        flex-direction: column;
+      }
+    }
+  }
+}
+
+@media (max-width: 890px ) {
+  .portfolio {
+    .block_service {
+      display: flex;
+      flex-direction: column !important;
+      flex-wrap: wrap;
+    }
+  }
+}
+
+@media (max-width: 1440px ) {
+  .portfolio {
+    .block {
+      .items {
+        justify-content: center;
+      }
+    }
+  }
+}

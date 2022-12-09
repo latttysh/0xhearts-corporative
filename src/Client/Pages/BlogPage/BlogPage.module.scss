@@ -1,19 +1,19 @@
-.blog{
+.blog {
   margin-bottom: 64px;
-  .title{
+  .title {
     font-weight: 450;
     font-size: 48px;
     line-height: 56px;
     letter-spacing: -0.01em;
-    color: #F9F9F9;
+    color: #f9f9f9;
     margin-bottom: 40px;
   }
-  .block{
+  .block {
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
     gap: 40px;
-    .news{
+    .news {
       flex: 65%;
       display: grid;
 
@@ -23,20 +23,66 @@
       gap: 26px;
       height: 100%;
     }
-    .popular{
-      &_title{
+    .popular {
+      &_title {
         font-weight: 450;
         font-size: 32px;
         line-height: 48px;
         letter-spacing: -0.01em;
-        color: #F9F9F9;
+        color: #f9f9f9;
         margin-bottom: 16px;
       }
-      .popular_block{
+      .popular_block {
         display: flex;
         align-items: flex-start;
         flex-direction: column;
         gap: 20px;
+      }
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .blog {
+    
+    .block {
+      flex-direction: column-reverse;
+      .popular {
+        .popular_block {
+          flex-direction: row;
+          flex-wrap: wrap;
+          justify-content: space-between;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 940px) {
+  .blog {
+    .title {
+      text-align: center;
+    }
+    .block {
+      .popular {
+        .popular_title {
+          text-align: center;
+        }
+        .popular_block {
+          align-items: center;
+          justify-content: center;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  .blog {
+    .block {
+      .news {
+        display: flex;
+        flex-direction: column;
       }
     }
   }

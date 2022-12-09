@@ -11,7 +11,7 @@ const WorkItem: FunctionComponent<Props> = (props) => {
       <div className={s.work}>
           <img src={workpng} className={s.img} alt="work"/>
           <div className={s.title}>
-              Scally Milano - Codeine
+              Scally Milano - Codeine 
           </div>
           <div className={s.author}>ЮРИЙ БОРОДИН</div>
       </div>
