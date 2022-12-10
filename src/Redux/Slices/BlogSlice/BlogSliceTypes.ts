@@ -8,7 +8,7 @@ export interface blogType{
     id: number
     title: string
     text: string
-    cover_ing: string
+    cover_img: string
     category: string
     author: string
     createdAt: string

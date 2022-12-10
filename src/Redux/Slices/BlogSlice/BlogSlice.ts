@@ -11,7 +11,7 @@ const initialState:initialStateType = {
         author: "",
         title: "",
         id: 0,
-        cover_ing: "",
+        cover_img: "",
         text: "",
         updatedAt: ""
     }

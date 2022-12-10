@@ -28,7 +28,7 @@ const BlogPage: FunctionComponent<Props> = (props) => {
                   blogState.posts.map((post: blogType) => {
                       return (
                       <NavLink to={`/post/${post.id}`}>
-                          <BlogItem title={post.title} author={post.author} category={post.category} time={post.createdAt}/>
+                          <BlogItem title={post.title} author={post.author} category={post.category} time={post.createdAt} img={post.cover_img}/>
                       </NavLink>)
                   })
               }

@@ -11,6 +11,7 @@ interface OwnProps {
     title: string
     author: string
     time: string
+    img: string
 }
 
 type Props = OwnProps;
@@ -18,7 +19,7 @@ type Props = OwnProps;
 const BlogItem: FunctionComponent<Props> = (props) => {
 
     return (
-      <div className={s.item} style={{backgroundImage: `url(${img})`}}>
+      <div className={s.item} style={{backgroundImage: `url(${props.img})`}}>
         <div className={s.category}>{props.category}</div>
         <div className={s.title}>{props.title}</div>
         <div className={s.author}>
