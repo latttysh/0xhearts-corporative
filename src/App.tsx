@@ -3,6 +3,7 @@ import {Route, Routes} from "react-router-dom";
 import Client from "./Client/Client";
 import Admin from "./Admin/Admin";
 import "normalize.css"
+import './i18n/config';
 import s from "./index.module.scss"
 
 function App() {

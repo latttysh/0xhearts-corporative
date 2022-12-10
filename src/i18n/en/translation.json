@@ -1,7 +1,9 @@
 {
-  "title": "Welcome to react using react-i18next fully type-safe",
-  "description": {
-    "part1": "This is a simple example.",
-    "part2": "😉"
-  }
+  "Наши работы": "Our projects",
+  "Блог": "Blog",
+  "О нас": "About us",
+  "Контакты": "Contacts",
+  "Начать проект": "Start the project",
+  "Мы делаем превосходные" : "We are making great",
+  "0xHearts — команда профессионалов в digital-сфере. Признанный опыт работы в N26, с RU и US артистами, а также с 250+ довольными заказчиками." : "0xHearts is a team of professionals in the digital sphere. Recognized experience in N26, with RU and US artists, as well as 250+ satisfied customers."
 }

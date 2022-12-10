@@ -5,12 +5,15 @@ import { ReactComponent as USA } from '../../Assets/img/usa.svg';
 import PrimaryButton from '../Buttons/PrimaryButton/PrimaryButton';
 import { NavLink, useNavigate } from 'react-router-dom';
 import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
+import {useTranslation} from "react-i18next";
 
 interface OwnProps {}
 
 type Props = OwnProps;
 
+
 const Header: FunctionComponent<Props> = (props) => {
+  const { t } = useTranslation();
   const navigate = useNavigate();
   const [nav, setNav] = useState(false);
 
@@ -25,16 +28,16 @@ const Header: FunctionComponent<Props> = (props) => {
 
         <div className={nav ? `${s.navigation} ${s.active}` : s.navigation} >
           <NavLink to={'/portfolio'}>
-            <div className={s.navigation_item}>Наши работы</div>
+            <div className={s.navigation_item}>{t("Наши работы")}</div>
           </NavLink>
           <NavLink to={'/blog'}>
-            <div className={s.navigation_item}>Блог</div>
+            <div className={s.navigation_item}>{t("Блог")}</div>
           </NavLink>
           <NavLink to={'/about'}>
-            <div className={s.navigation_item}>О нас</div>
+            <div className={s.navigation_item}>{t("О нас")}</div>
           </NavLink>
           <NavLink to={'/contacts'}>
-            <div className={s.navigation_item}>Контакты</div>
+            <div className={s.navigation_item}>{t("Контакты")}</div>
           </NavLink>
         </div>
       </div>
@@ -45,7 +48,7 @@ const Header: FunctionComponent<Props> = (props) => {
           </div>
           <div className={s.language_text}>switch language</div>
         </div>
-        <PrimaryButton title={'Начать проект'} action={() => navigate('/send')} />
+        <PrimaryButton title={t("Начать проект")} action={() => navigate('/send')} />
         <div onClick={() => setNav(!nav)} className={s.burger_menu}>
           {nav ? <AiOutlineClose size={25} /> : <AiOutlineMenu size={25} />}
         </div>

@@ -8,6 +8,7 @@ import crashgg from "../../Assets/img/crashGG.png"
 import smsverif from "../../Assets/img/smsverefication.png"
 import cryptox from "../../Assets/img/CRYPTOX.png"
 import {useNavigate} from "react-router-dom";
+import {useTranslation} from "react-i18next";
 
 interface OwnProps {
 }
@@ -15,6 +16,7 @@ interface OwnProps {
 type Props = OwnProps;
 
 const LandingPage: FunctionComponent<Props> = (props) => {
+    const { t } = useTranslation();
 
     const navigate = useNavigate()
     // Лендинг
@@ -22,7 +24,7 @@ const LandingPage: FunctionComponent<Props> = (props) => {
         <>
             <section className={s.hero}>
                 <div className={s.hero_title}>
-                    <div>Мы делаем превосходные</div>
+                    <div>{t("Мы делаем превосходные")}</div>
                     <Typewriter
                         options={{
                             strings: [
@@ -43,8 +45,7 @@ const LandingPage: FunctionComponent<Props> = (props) => {
                 <div className={s.promo}>
                     <img src={animbg} alt="anim" className={s.animbg}/>
                     <div className={s.promo_text}>
-                        0xHearts — команда профессионалов в digital-сфере. Признанный опыт <br/>
-                        работы в N26, с RU и US артистами, а также с 250+ довольными заказчиками.
+                        {t(" 0xHearts — команда профессионалов в digital-сфере. Признанный опыт работы в N26, с RU и US артистами, а также с 250+ довольными заказчиками.")}
                     </div>
                 </div>
 
