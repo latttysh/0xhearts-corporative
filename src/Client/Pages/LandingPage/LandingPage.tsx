@@ -9,6 +9,7 @@ import smsverif from "../../Assets/img/smsverefication.png"
 import cryptox from "../../Assets/img/CRYPTOX.png"
 import {useNavigate} from "react-router-dom";
 import {useTranslation} from "react-i18next";
+import n26 from "../../Assets/img/n26.svg"
 
 interface OwnProps {
 }
@@ -28,15 +29,15 @@ const LandingPage: FunctionComponent<Props> = (props) => {
                     <Typewriter
                         options={{
                             strings: [
-                                "лендинги",
-                                "анимации",
-                                "веб-сайты",
-                                "обложки",
-                                "логотипы",
-                                "телеграм-боты",
-                                "афиши и проморолики",
-                                "NFT-коллекции",
-                                "интерфейсы",
+                                t("лендинги"),
+                                t("анимации"),
+                                t("веб-сайты"),
+                                t("обложки"),
+                                t("логотипы"),
+                                t("телеграм-боты"),
+                                t("афиши и проморолики"),
+                                t("NFT-коллекции"),
+                                t("интерфейсы"),
                             ],
                             autoStart: true,
                             loop: true,
@@ -45,39 +46,32 @@ const LandingPage: FunctionComponent<Props> = (props) => {
                 <div className={s.promo}>
                     <img src={animbg} alt="anim" className={s.animbg}/>
                     <div className={s.promo_text}>
-                        {t(" 0xHearts — команда профессионалов в digital-сфере. Признанный опыт работы в N26, с RU и US артистами, а также с 250+ довольными заказчиками.")}
+                        {t("0xHearts — команда профессионалов в digital-сфере. Признанный опыт работы в N26, с RU и US артистами, а также с 250+ довольными заказчиками.")}
                     </div>
                 </div>
 
             </section>
             <section className={s.services}>
-                <ServiceItem title={"Полный дизайн популярного\n" +
-                    "крипто-казино crash.gg"} img={crashgg}/>
-                <ServiceItem title={"Сайты, лендинги,\n" +
-                    "интерфейсы"} img={cryptox}/>
-                <ServiceItem title={"2D-Графика, обложки, афиши, \n" +
-                    "промо и анимации"}/>
-                <ServiceItem title={"3D-Графика, NFT, анимация и \n" +
-                    "визуализация"}/>
-                <ServiceItem title={"Брендинг, упаковка продукта, фирменный стиль"}/>
+                <ServiceItem title={t("Полный дизайн популярного крипто-казино crash.gg")} img={crashgg}/>
+                <ServiceItem title={t("Сайты, лендинги, интерфейсы")} img={cryptox}/>
+                <ServiceItem title={t("2D-Графика, обложки, афиши промо и анимации")}/>
+                <ServiceItem title={t("3D-Графика, NFT, анимация и визуализация")}/>
+                <ServiceItem title={t("Брендинг, упаковка продукта, фирменный стиль")}/>
             </section>
 
             <section className={s.done_projects}>
-                <div className={s.done_projects_description}>Проекты, компании, корпорации, исполнители, артисты, люди.
-                    Люди обращаются к нам, когда необходимо предоставить лучший результат и права на ошибку — нет.
+                <div className={s.done_projects_description}>{t("Проекты, компании, корпорации, исполнители, артисты, люди. Люди обращаются к нам, когда необходимо предоставить лучший результат и права на ошибку — нет.")}
                 </div>
                 <div className={s.block}>
-                    <ServiceItem title={"Полный дизайн сервиса для\n" +
-                        "приёма SMS — smsverification.xyz"} img={smsverif}/>
-                    <ServiceItem title={"NFT-Коллекция\n" +
-                        "Shiba Toys"}/>
+                    <ServiceItem title={t("Полный дизайн сервиса для приёма SMS — smsverification.xyz")} img={smsverif}/>
+                    <ServiceItem title={t("NFT-Коллекция Shiba Toys")}/>
                 </div>
             </section>
 
             <section className={s.news}>
                 <div className={s.header}>
-                    <div className={s.title}>Статьи от авторов 0xHearts</div>
-                    <div className={s.more} onClick={() => navigate("/blog")}>Открыть блог</div>
+                    <div className={s.title}>{t("Статьи от авторов 0xHearts")}</div>
+                    <div className={s.more} onClick={() => navigate("/blog")}>{t("Открыть блог")}</div>
                 </div>
                 <div className={s.blocks}>
                     <StoryItem title={"Всё, что вы должны знать когда работаете со студиями и агентствами"}

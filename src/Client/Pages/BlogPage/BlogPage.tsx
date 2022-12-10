@@ -7,6 +7,7 @@ import {getPosts} from "../../../Redux/Slices/BlogSlice/BlogAsyncActions";
 import {useSelector} from "react-redux";
 import {blogType} from "../../../Redux/Slices/BlogSlice/BlogSliceTypes";
 import {NavLink} from "react-router-dom";
+import {useTranslation} from "react-i18next";
 interface OwnProps {}
 
 type Props = OwnProps;
@@ -14,14 +15,14 @@ type Props = OwnProps;
 const BlogPage: FunctionComponent<Props> = (props) => {
     const blogState = useSelector((state:any) => state.blogSlice);
     const dispatch = useAppDispatch()
-
+    const { t } = useTranslation();
     React.useEffect(()=> {
         dispatch(getPosts())
     },[])
 
   return (
       <div className={s.blog}>
-        <div className={s.title}>Блог</div>
+        <div className={s.title}>{t("Блог")}</div>
         <div className={s.block}>
           <div className={s.news}>
               {
@@ -34,7 +35,7 @@ const BlogPage: FunctionComponent<Props> = (props) => {
               }
           </div>
           <div className={s.popular}>
-            <div className={s.popular_title}>Популярные статьи</div>
+            <div className={s.popular_title}>{t("Популярные статьи")}</div>
               <div className={s.popular_block}>
                   <PopularNewsItem/>
                   <PopularNewsItem/>

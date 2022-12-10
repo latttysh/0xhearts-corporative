@@ -13,7 +13,7 @@ const PrimaryButton: FunctionComponent<Props> = (props) => {
     props.action()
   }
   return (
-      <button className={s.primary} onClick={onButtonClick}>Начать проект</button>
+      <button className={s.primary} onClick={onButtonClick}>{props.title}</button>
   );
 };
 
