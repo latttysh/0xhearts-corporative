@@ -20,3 +20,16 @@
     color: #A7A7D1;
   }
 }
+
+
+@media (max-width: 720px ) {
+  .work {
+    width: 100%;
+    .img {
+      width: 100%;
+    }
+    .title {
+      width: 100%;
+    }
+  }
+}

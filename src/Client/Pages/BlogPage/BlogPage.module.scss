@@ -44,3 +44,49 @@
     }
   }
 }
+
+@media (max-width: 1200px) {
+  .blog {
+
+    .block {
+      flex-direction: column-reverse;
+      .popular {
+        .popular_block {
+          flex-direction: row;
+          flex-wrap: wrap;
+          justify-content: space-between;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 940px) {
+  .blog {
+    .title {
+      text-align: center;
+    }
+    .block {
+      .popular {
+        .popular_title {
+          text-align: center;
+        }
+        .popular_block {
+          align-items: center;
+          justify-content: center;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  .blog {
+    .block {
+      .news {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+  }
+}
