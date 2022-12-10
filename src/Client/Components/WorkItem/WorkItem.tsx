@@ -1,20 +1,25 @@
 import React, { FunctionComponent } from 'react';
 import s from "./WorkItem.module.scss"
 import workpng from "../../Assets/img/work.png"
-interface OwnProps {}
+interface OwnProps {
+    img: string
+    title: string
+    author: string
+    link: string
+}
 
 type Props = OwnProps;
 
 const WorkItem: FunctionComponent<Props> = (props) => {
 
   return (
-      <div className={s.work}>
+      <a className={s.work} href={props.link} target={"_blank"}>
           <img src={workpng} className={s.img} alt="work"/>
           <div className={s.title}>
-              Scally Milano - Codeine 
+              {props.title}
           </div>
-          <div className={s.author}>ЮРИЙ БОРОДИН</div>
-      </div>
+          <div className={s.author}>{props.author}</div>
+      </a>
   );
 };
 

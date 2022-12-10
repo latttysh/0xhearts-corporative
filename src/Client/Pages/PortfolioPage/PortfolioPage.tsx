@@ -36,14 +36,8 @@ const PortfolioPage: FunctionComponent<Props> = (props) => {
           <div className={s.title_block}>{t("Обложки")}</div>
           <div className={s.block}>
               <div className={s.items}>
-                  <WorkItem/>
-                  <WorkItem/>
-                  <WorkItem/>
-                  <WorkItem/>
-                  <WorkItem/>
-                  <WorkItem/>
-                  <WorkItem/>
-                  <WorkItem/>
+                  <WorkItem link={"1"} img={"1"} title={"1"} author={"1"}/>
+
               </div>
               <div className={s.buttons}>
                   <SecondaryButton title={t("Больше работ")} action={()=>console.log(123)}/>
@@ -54,14 +48,8 @@ const PortfolioPage: FunctionComponent<Props> = (props) => {
           <div className={s.title_block}>{t("Афиши, промо и анимации")}</div>
           <div className={s.block}>
               <div className={s.items}>
-                  <WorkItem/>
-                  <WorkItem/>
-                  <WorkItem/>
-                  <WorkItem/>
-                  <WorkItem/>
-                  <WorkItem/>
-                  <WorkItem/>
-                  <WorkItem/>
+                  <WorkItem link={"1"} img={"1"} title={"1"} author={"1"}/>
+
               </div>
               <div className={s.buttons}>
                   <SecondaryButton title={t("Больше работ")} action={()=>console.log(123)}/>
