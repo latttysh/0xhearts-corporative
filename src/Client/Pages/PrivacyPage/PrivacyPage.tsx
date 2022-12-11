@@ -6,6 +6,11 @@ type Props = OwnProps;
 
 const PrivacyPage: FunctionComponent<Props> = (props) => {
 
+    React.useEffect(()=>{
+        window.scrollTo(0, 0)
+
+    },[])
+
   return (
       <div className={s.privacy}>
           <div className={s.title}>

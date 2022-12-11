@@ -14,7 +14,7 @@ const WorkItem: FunctionComponent<Props> = (props) => {
 
   return (
       <a className={s.work} href={props.link} target={"_blank"}>
-          <img src={workpng} className={s.img} alt="work"/>
+          <img src={props.img} className={s.img} alt="work"/>
           <div className={s.title}>
               {props.title}
           </div>

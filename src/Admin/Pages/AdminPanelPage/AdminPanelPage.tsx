@@ -8,7 +8,7 @@ import {useAppDispatch} from "../../../Redux/store";
 import {createPath} from "react-router-dom";
 import {createPost} from "../../../Redux/Slices/BlogSlice/BlogAsyncActions";
 import {createWork} from "../../../Redux/Slices/PortfolioSlice/PortfolioAsyncActions";
-
+import s from "./AdminPanel.module.scss"
 interface OwnProps {
 }
 
@@ -19,6 +19,7 @@ type Inputs = {
     cover_img: string,
     category: string,
     link: string
+    is_top:boolean
 
 };
 
@@ -35,7 +36,8 @@ const AdminPanelPage: FunctionComponent<Props> = (props) => {
     };
 
     const onSubmit2: SubmitHandler<Inputs> = data => {
-        dispatch(createWork(data))
+        console.log(data)
+        // dispatch(createWork(data))
     };
     const mdParser = new MarkdownIt(/* Markdown-it options */);
     const [text, setText] = React.useState("")
@@ -47,23 +49,25 @@ const AdminPanelPage: FunctionComponent<Props> = (props) => {
     return (
         <>
             <div >Добавить статью</div>
-            <form onSubmit={handleSubmit(onSubmit)}>
+            <form onSubmit={handleSubmit(onSubmit)} className={s.form}>
                 <MdEditor style={{height: '500px'}} renderHTML={text => mdParser.render(text)}
                           onChange={handleEditorChange}/>
-                <input type="text" placeholder={"title"} {...register("title")}/>
-                <input type="text" placeholder={"author"} {...register("author")}/>
-                <input type="text" placeholder={"cover_img"} {...register("cover_img")}/>
-                <input type="text" placeholder={"category"} {...register("category")}/>
+                <input type="text" placeholder={"Название"} {...register("title")}/>
+                <input type="text" placeholder={"Автор"} {...register("author")}/>
+                <input type="text" placeholder={"Обложка"} {...register("cover_img")}/>
+                <input type="text" placeholder={"Категория"} {...register("category")}/>
                 <button>GO</button>
             </form>
 
             <div>Добавить Работу</div>
-            <form onSubmit={handleSubmit(onSubmit2)}>
-                <input type="text" placeholder={"title"} {...register("title")}/>
-                <input type="text" placeholder={"author"} {...register("author")}/>
-                <input type="text" placeholder={"cover_img"} {...register("cover_img")}/>
-                <input type="text" placeholder={"link"} {...register("link")}/>
-                <input type="text" placeholder={"category"} {...register("category")}/>
+            <form onSubmit={handleSubmit(onSubmit2)} className={s.form}>
+                <input type="text" placeholder={"Название"} {...register("title")}/>
+                <input type="text" placeholder={"Автор"} {...register("author")}/>
+                <input type="text" placeholder={"Обложка"} {...register("cover_img")}/>
+                <input type="text" placeholder={"Ссылка на исходник"} {...register("link")}/>
+                <input type="text" placeholder={"Категория"} {...register("category")}/>
+                <span>Включить в топ 8?</span>
+                <input type="checkbox"  {...register("is_top")}/>
                 <button>GO</button>
             </form>
 
