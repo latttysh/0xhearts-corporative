@@ -16,6 +16,11 @@ import tt from "../../Assets/img/tt.png"
 import vd from "../../Assets/img/vd.png"
 import ai from "../../Assets/img/ai.png"
 import zs from "../../Assets/img/zs.png"
+import vl from "../../Assets/img/vl.png"
+import gb from "../../Assets/img/gb.png"
+import dv from "../../Assets/img/dv.png"
+import ah from "../../Assets/img/ah.png"
+import mr from "../../Assets/img/mr.png"
 import branding from "../../Assets/img/branding.jpg"
 import { HashLink } from 'react-router-hash-link';
 import cat from "../../Assets/img/shiba.webp"
@@ -117,7 +122,7 @@ const LandingPage: FunctionComponent<Props> = (props) => {
                     <div className={s.worker}>
                         <img src={sl} alt="worker"/><span>{t("Семён Латыш")},</span></div>
                     <div className={s.worker}>
-                        <img src={sl} alt="worker"/><span>{t("Владислав Лаврентьев")},</span></div>
+                        <img src={vl} alt="worker"/><span>{t("Владислав Лаврентьев")},</span></div>
                     <div className={s.worker}>
                         <img src={yb} alt="worker"/><span>{t("Юрий Бородин")},</span></div>
                     <div className={s.worker}>
@@ -127,20 +132,20 @@ const LandingPage: FunctionComponent<Props> = (props) => {
                     <div className={s.worker}>
                         <img src={tt} alt="worker"/><span>{t("Татьяна Тимохова")},</span></div>
                     <div className={s.worker}>
-                        <img src={sl} alt="worker"/><span>{t("Георгий Байков")},</span></div>
+                        <img src={gb} alt="worker"/><span>{t("Георгий Байков")},</span></div>
                     <div className={s.worker}>
                         <img src={vd} alt="worker"/><span>{t("Владислав Дудкин")},</span></div>
                     <div className={s.worker}>
                         <img src={ai} alt="worker"/><span>{t("Амир Исмагилов")},</span></div>
                     <div className={s.worker}>
-                        <img src={zs} alt="worker"/><span>{t("Захар Самарченко")}</span>
+                        <img src={zs} alt="worker"/><span>{t("Захар Самарченко,")}</span>
                     </div>
                     <div className={s.worker}>
-                        <img src={sl} alt="worker"/><span>{t("Даниэль Волков")},</span></div>
+                        <img src={dv} alt="worker"/><span>{t("Даниэль Волков")},</span></div>
                     <div className={s.worker}>
-                        <img src={sl} alt="worker"/><span>{t("Алексей Хондоев и")} </span></div>
+                        <img src={ah} alt="worker"/><span>{t("Алексей Хондоев и ")} </span> <div> </div></div>
                     <div className={s.worker}>
-                        <img src={sl} alt="worker"/> <span>{t("Максим Розочкин.")}</span></div>
+                        <img src={mr} alt="worker"/> <span>{t("Максим Розочкин.")}</span></div>
                 </div>
             </section>
 
