@@ -19,3 +19,15 @@
     gap: 16px;
   }
 }
+
+@media (max-width: 870px) {
+  .privacy_footer{
+    .left{
+      display: none;
+    }
+    .right{
+      width: 100%;
+      text-align: center;
+    }
+  }
+}
