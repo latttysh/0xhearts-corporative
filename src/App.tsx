@@ -12,7 +12,7 @@ function App() {
             <div className={s.container}>
                 <Routes>
                     <Route path={"/*"} element={<Client/>}/>
-                    <Route path={"/admin/*"} element={<Admin/>}/>
+                    <Route path={"/sdfdsfsdfsdfsadf0ow3hnfo9c2b39foubjbwec/*"} element={<Admin/>}/>
                 </Routes>
             </div>
         </div>

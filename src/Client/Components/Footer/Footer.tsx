@@ -73,11 +73,23 @@ const Footer: FunctionComponent<Props> = (props) => {
                       <div className={s.description}>{t("чашек кофе мы пьём каждый день")}</div>
                   </div>
               </div>
-              <div className={s.tg}>
+              <div className={s.tg} onClick={()=>{
+                  const a = document.createElement("a")
+                  a.href = "https://t.me/manager0xhearts"
+                  a.target = "_blank"
+                  a.click()
+              }}>
                   <img src={tg} alt="telegram"/>
                   <div className={s.text}>tg: <span>@manager0xhearts</span></div>
               </div>
-              <div className={s.mail}>
+              <div className={s.mail}
+                   onClick={()=>{
+                       const a = document.createElement("a")
+                       a.href = "mailto:hello@0xhearts.com"
+                       a.target = "_blank"
+                       a.click()
+                   }}
+              >
                   <img src={mail} alt="telegram"/>
                   <div className={s.text}>mail: <span>hello@0xhearts.com</span></div>
               </div>

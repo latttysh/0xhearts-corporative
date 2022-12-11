@@ -5,7 +5,7 @@ interface OwnProps {
     title: string
     category: string
     isMain: boolean
-    /*image: string*/
+    image: string
 }
 
 type Props = OwnProps;
@@ -13,7 +13,7 @@ type Props = OwnProps;
 const StoryItem: FunctionComponent<Props> = (props) => {
 
   return (
-      <div className={s.story} style={props.isMain ? {backgroundImage: `url(${bg})`, width:"40%"} : {backgroundImage: `url(${bg})`, width:"30%"}}>
+      <div className={s.story} style={props.isMain ? {backgroundImage: `url(${props.image})`, width:"40%"} : {backgroundImage: `url(${props.image})`, width:"30%"}}>
           <div className={s.title}>{props.title}</div>
           <div className={s.category}>{props.category}</div>
       </div>

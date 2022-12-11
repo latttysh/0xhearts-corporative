@@ -22,8 +22,22 @@
 
 @media (max-width: 870px) {
   .privacy_footer{
+    flex-direction: column;
     .left{
-      display: none;
+      //display: none;
+    }
+    .right{
+      width: 100%;
+      text-align: center;
+    }
+  }
+}
+
+@media (max-width: 820px) {
+  .privacy_footer{
+    flex-direction: column;
+    .left{
+      flex-direction: column;
     }
     .right{
       width: 100%;

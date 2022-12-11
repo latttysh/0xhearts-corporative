@@ -32,7 +32,7 @@ const AdminPanelPage: FunctionComponent<Props> = (props) => {
     const onSubmit: SubmitHandler<Inputs> = data => {
         data["text"] = text
         console.log(data)
-        dispatch(createPost(data))
+        // dispatch(createPost(data))
     };
 
     const onSubmit2: SubmitHandler<Inputs> = data => {

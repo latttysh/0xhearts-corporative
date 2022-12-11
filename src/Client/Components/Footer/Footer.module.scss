@@ -138,6 +138,8 @@
     align-items: center;
     gap: 12px;
     margin-bottom: 12px;
+    cursor: pointer;
+
     .text{
       font-weight: 450;
       font-size: 32px;
@@ -158,6 +160,7 @@
     display: flex;
     align-items: center;
     gap: 12px;
+    cursor: pointer;
     .text{
       font-weight: 450;
       font-size: 32px;

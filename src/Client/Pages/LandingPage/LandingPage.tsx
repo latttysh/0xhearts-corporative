@@ -71,7 +71,12 @@ const LandingPage: FunctionComponent<Props> = (props) => {
 
             </section>
             <section className={s.services}>
-                <ServiceItem title={t("Полный дизайн сервиса для приёма SMS — smsverification.xyz")} img={smsverif} action={()=>null}/>
+                <ServiceItem title={t("Полный дизайн сервиса для приёма SMS — smsverification.xyz")} img={smsverif} action={()=>{
+                    const a = document.createElement("a")
+                    a.href = "https://www.behance.net/gallery/158746783/SMSVerification-Website-Branding"
+                    a.target = "_blank"
+                    a.click()
+                }}/>
 
                 <ServiceItem title={t("Сайты, лендинги, интерфейсы")} video={false} img={cryptox} action={()=>navigate("/portfolio/works/sites")}/>
                 <ServiceItem img={"/Videos/covers.mp4"} video={true} title={t("2D-Графика, обложки, афиши промо и анимации")} action={()=>navigate("/portfolio/2d_all")}/>
@@ -95,12 +100,12 @@ const LandingPage: FunctionComponent<Props> = (props) => {
                     <div className={s.more} onClick={() => navigate("/blog")}>{t("Открыть блог")}</div>
                 </div>
                 <div className={s.blocks}>
-                    <StoryItem title={"Всё, что вы должны знать когда работаете со студиями и агентствами"}
-                               category={"Личный опыт"} isMain={true}/>
-                    <StoryItem title={"Всё, что вы должны знать когда работаете со студиями и агентствами"}
-                               category={"Личный опыт"} isMain={false}/>
-                    <StoryItem title={"Всё, что вы должны знать когда работаете со студиями и агентствами"}
-                               category={"Личный опыт"} isMain={false}/>
+                    <StoryItem  image={"https://i.imgur.com/BH6KSQS.jpg"} title={t("Блог в стадии разработки")}
+                               category={t("Разработка")} isMain={true}/>
+                    <StoryItem image={"https://i.imgur.com/BH6KSQS.jpg"}  title={t("Блог в стадии разработки")}
+                               category={t("Разработка")} isMain={false}/>
+                    <StoryItem  image={"https://i.imgur.com/BH6KSQS.jpg"} title={t("Блог в стадии разработки")}
+                                   category={t("Разработка")} isMain={false}/>
                 </div>
             </section>
 
@@ -110,32 +115,32 @@ const LandingPage: FunctionComponent<Props> = (props) => {
                 <div className={s.workers}>
                     <div className={s.title}>We are in 0xHearts —</div>
                     <div className={s.worker}>
-                        <img src={sl} alt="worker"/><span>Semyon Latysh,</span></div>
+                        <img src={sl} alt="worker"/><span>{t("Семён Латыш")},</span></div>
                     <div className={s.worker}>
-                        <img src={sl} alt="worker"/><span>Vladislav Lavrentiev,</span></div>
+                        <img src={sl} alt="worker"/><span>{t("Владислав Лаврентьев")},</span></div>
                     <div className={s.worker}>
-                        <img src={yb} alt="worker"/><span>Yuri Borodin,</span></div>
+                        <img src={yb} alt="worker"/><span>{t("Юрий Бородин")},</span></div>
                     <div className={s.worker}>
-                        <img src={ac} alt="worker"/><span>Artyom Chernykh,</span></div>
+                        <img src={ac} alt="worker"/><span>{t("Артём Черных")},</span></div>
                     <div className={s.worker}>
-                        <img src={nm} alt="worker"/><span>Nikita Maksimov,</span></div>
+                        <img src={nm} alt="worker"/><span>{t("Никита Максимов")},</span></div>
                     <div className={s.worker}>
-                        <img src={tt} alt="worker"/><span>Tatiana Timokhova,</span></div>
+                        <img src={tt} alt="worker"/><span>{t("Татьяна Тимохова")},</span></div>
                     <div className={s.worker}>
-                        <img src={sl} alt="worker"/><span>Georgy Baykov,</span></div>
+                        <img src={sl} alt="worker"/><span>{t("Георгий Байков")},</span></div>
                     <div className={s.worker}>
-                        <img src={vd} alt="worker"/><span>Vladislav Dudkin,</span></div>
+                        <img src={vd} alt="worker"/><span>{t("Владислав Дудкин")},</span></div>
                     <div className={s.worker}>
-                        <img src={ai} alt="worker"/><span>Amir Ismagilov,</span></div>
+                        <img src={ai} alt="worker"/><span>{t("Амир Исмагилов")},</span></div>
                     <div className={s.worker}>
-                        <img src={zs} alt="worker"/><span>Zakhar Samarchenko</span>
+                        <img src={zs} alt="worker"/><span>{t("Захар Самарченко")}</span>
                     </div>
                     <div className={s.worker}>
-                        <img src={sl} alt="worker"/><span>Daniel Volkov,</span></div>
+                        <img src={sl} alt="worker"/><span>{t("Даниэль Волков")},</span></div>
                     <div className={s.worker}>
-                        <img src={sl} alt="worker"/><span>Alexei Khondoev and </span></div>
+                        <img src={sl} alt="worker"/><span>{t("Алексей Хондоев и")} </span></div>
                     <div className={s.worker}>
-                        <img src={sl} alt="worker"/> <span> Maxim Rosochkin.</span></div>
+                        <img src={sl} alt="worker"/> <span>{t("Максим Розочкин.")}</span></div>
                 </div>
             </section>
 
