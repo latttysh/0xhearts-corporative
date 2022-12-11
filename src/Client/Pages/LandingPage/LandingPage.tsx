@@ -8,7 +8,6 @@ import smsverif from "../../Assets/img/smsverefication.png"
 import cryptox from "../../Assets/img/CRYPTOX.png"
 import {useNavigate} from "react-router-dom";
 import {useTranslation} from "react-i18next";
-
 import sl from "../../Assets/img/sl.png"
 import yb from "../../Assets/img/yb.png"
 import ac from "../../Assets/img/ac.png"
@@ -17,8 +16,9 @@ import tt from "../../Assets/img/tt.png"
 import vd from "../../Assets/img/vd.png"
 import ai from "../../Assets/img/ai.png"
 import zs from "../../Assets/img/zs.png"
-import dv from "../../Assets/img/dv.png"
-import ak from "../../Assets/img/ak.png"
+import branding from "../../Assets/img/branding.jpg"
+import { HashLink } from 'react-router-hash-link';
+import cat from "../../Assets/img/shiba.webp"
 
 interface OwnProps {
 }
@@ -58,7 +58,12 @@ const LandingPage: FunctionComponent<Props> = (props) => {
                 </div>
                 </div>
                 <div className={s.promo}>
-                    <img src={animbg} alt="anim" className={s.animbg}/>
+{/*                    <video src={animbg} height={"100%"} width={"100%"} className={s.animbg}>
+                        <source src={"../../Assets/img/anim_bg.mp4"} type={"video/mp4"}/>
+                    </video>*/}
+                    <video controls={false} autoPlay={true} loop={true} muted={true} className={s.animbg}>
+                    <source src="/Videos/anim_bg.mp4" type="video/mp4" />
+                    </video>
                     <div className={s.promo_text}>
                         {t("0xHearts — команда профессионалов в digital-сфере. Признанный опыт работы в N26, с RU и US артистами, а также с 250+ довольными заказчиками.")}
                     </div>
@@ -66,19 +71,21 @@ const LandingPage: FunctionComponent<Props> = (props) => {
 
             </section>
             <section className={s.services}>
-                <ServiceItem title={t("Полный дизайн популярного крипто-казино crash.gg")} img={crashgg} action={()=>navigate("/portfolio")}/>
-                <ServiceItem title={t("Сайты, лендинги, интерфейсы")} img={cryptox} action={()=>navigate("/portfolio/works/sites")}/>
-                <ServiceItem title={t("2D-Графика, обложки, афиши промо и анимации")} action={()=>navigate("/portfolio/2d_all")}/>
-                <ServiceItem title={t("3D-Графика, NFT, анимация и визуализация")} action={()=>navigate("/portfolio/3d_all")}/>
-                <ServiceItem title={t("Брендинг, упаковка продукта, фирменный стиль")} action={()=>navigate("/portfolio/branding_all")}/>
+                <ServiceItem title={t("Полный дизайн сервиса для приёма SMS — smsverification.xyz")} img={smsverif} action={()=>null}/>
+
+                <ServiceItem title={t("Сайты, лендинги, интерфейсы")} video={false} img={cryptox} action={()=>navigate("/portfolio/works/sites")}/>
+                <ServiceItem img={"/Videos/covers.mp4"} video={true} title={t("2D-Графика, обложки, афиши промо и анимации")} action={()=>navigate("/portfolio/2d_all")}/>
+                <ServiceItem img={"/Videos/3d.mp4"} video={true} title={t("3D-Графика, NFT, анимация и визуализация")} action={()=>navigate("/portfolio/3d_all")}/>
+                <ServiceItem title={t("Брендинг, упаковка продукта, фирменный стиль")} img={branding} video={false} action={()=>navigate("/portfolio/branding_all")}/>
             </section>
 
             <section className={s.done_projects}>
                 <div className={s.done_projects_description}>{t("Проекты, компании, корпорации, исполнители, артисты, люди. Люди обращаются к нам, когда необходимо предоставить лучший результат и права на ошибку — нет.")}
                 </div>
                 <div className={s.block}>
-                    <ServiceItem title={t("Полный дизайн сервиса для приёма SMS — smsverification.xyz")} img={smsverif} action={()=>null}/>
-                    <ServiceItem title={t("NFT-Коллекция Shiba Toys")} action={()=>null}/>
+                    <ServiceItem title={t("Полный дизайн популярного крипто-казино crash.gg")} button={"Available soon"} video={false} img={crashgg} action={()=>null}/>
+
+                    <ServiceItem title={t("NFT-Коллекция Shiba Toys")} video={false} img={cat} action={()=>null}/>
                 </div>
             </section>
 
@@ -98,7 +105,7 @@ const LandingPage: FunctionComponent<Props> = (props) => {
             </section>
 
 
-            <section>
+            <section id={"workers"}>
 
                 <div className={s.workers}>
                     <div className={s.title}>We are in 0xHearts —</div>

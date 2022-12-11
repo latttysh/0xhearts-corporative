@@ -11,12 +11,12 @@
   gap: 200px;
   position: relative;
   overflow: hidden;
+  max-height: 360px;
   .bg{
     position: absolute;
     right: 0;
     z-index: -1;
     bottom: -24px;
-    //width: 60%;
   }
   &:first-child{
     grid-row-start: 1;

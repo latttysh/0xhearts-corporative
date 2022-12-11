@@ -34,7 +34,7 @@ const Footer: FunctionComponent<Props> = (props) => {
       <div className={s.footer}>
           {isSend && <ThanksModal close={()=>setIsSend(false)}/>
           }
-          <div className={s.send}>
+          <div className={s.send}  style={{backgroundImage: `url(${stroke})`}}>
               <div className={s.header}>
                   <div className={s.text}>
                       <div className={s.title}>{t("Давайте работать над вашим проектом")}</div>

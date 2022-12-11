@@ -9,6 +9,7 @@ import { NavLink, useNavigate } from 'react-router-dom';
 import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
 import {useTranslation} from "react-i18next";
 import {set} from "react-hook-form";
+import {HashLink} from "react-router-hash-link";
 
 interface OwnProps {}
 
@@ -44,9 +45,9 @@ const Header: FunctionComponent<Props> = (props) => {
           <NavLink to={'/blog'} onClick={()=>setNav(false)}>
             <div className={s.navigation_item}>{t("Блог")}</div>
           </NavLink>
-          <NavLink to={'/about'} onClick={()=>setNav(false)}>
+          <HashLink smooth to="#workers">
             <div className={s.navigation_item}>{t("О нас")}</div>
-          </NavLink>
+          </HashLink>
           <NavLink to={'/contacts'} onClick={()=>setNav(false)}>
             <div className={s.navigation_item}>{t("Контакты")}</div>
           </NavLink>
