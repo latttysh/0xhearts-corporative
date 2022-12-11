@@ -2,8 +2,11 @@
   max-width: 320px;
   cursor: pointer;
   text-decoration: none;
+  overflow: hidden;
   .img{
     margin-bottom: 12px;
+    width: 100%;
+    border-radius: 16px;
   }
   .title{
     font-weight: 450;
