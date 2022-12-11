@@ -95,7 +95,12 @@ const LandingPage: FunctionComponent<Props> = (props) => {
                 <div className={s.block}>
                     <ServiceItem title={t("Полный дизайн популярного крипто-казино crash.gg")} button={"Available soon"} video={false} img={crashgg} action={()=>null}/>
 
-                    <ServiceItem title={t("NFT-Коллекция Shiba Toys")} video={false} img={cat} action={()=>null}/>
+                    <ServiceItem title={t("NFT-Коллекция Shiba Toys")} video={false} img={cat} action={()=>{
+                        const a = document.createElement("a")
+                        a.href="https://www.behance.net/gallery/156467589/SHIBABETS-NFT-PROJECT"
+                        a.target="_blank"
+                        a.click()
+                    }}/>
                 </div>
             </section>
 
