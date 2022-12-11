@@ -8,6 +8,9 @@ import BlogPage from "./Pages/BlogPage/BlogPage";
 import ContactsPage from "./Pages/ContactsPage/ContactsPage";
 import PostPage from "./Pages/PostPage/PostPage";
 import WorksPage from "./Pages/WorksPage/WorksPage";
+import PrivacyFooter from "./Components/PrivacyFooter/PrivacyFooter";
+import s from "../index.module.scss"
+import PrivacyPage from "./Pages/PrivacyPage/PrivacyPage";
 
 interface OwnProps {
 }
@@ -18,16 +21,22 @@ const Client: FunctionComponent<Props> = (props) => {
 
     return (
         <>
-            <Header/>
-            <Routes>
-                <Route path={"/"} element={<LandingPage/>}/>
-                <Route path={"/portfolio"} element={<PortfolioPage/>}/>
-                <Route path={"/portfolio/:category"} element={<WorksPage/>}/>
-                <Route path={"/blog"} element={<BlogPage/>}/>
-                <Route path={"/contacts"} element={<ContactsPage/>}/>
-                <Route path={"/post/:id"} element={<PostPage/>}/>
-            </Routes>
-            <Footer/>
+            <div className={s.inner}>
+                <Header/>
+                <Routes>
+                    <Route path={"/"} element={<LandingPage/>}/>
+                    <Route path={"/portfolio/:category"} element={<PortfolioPage/>}/>
+                    <Route path={"/portfolio/works/:category"} element={<WorksPage/>}/>
+                    <Route path={"/blog"} element={<BlogPage/>}/>
+                    <Route path={"/contacts"} element={<ContactsPage/>}/>
+                    <Route path={"/post/:id"} element={<PostPage/>}/>
+                    <Route path={"/privacy"} element={<PrivacyPage/>}/>
+                </Routes>
+                <Footer/>
+            </div>
+           <div className={s.footer}>
+               <PrivacyFooter/>
+           </div>
         </>
     );
 };

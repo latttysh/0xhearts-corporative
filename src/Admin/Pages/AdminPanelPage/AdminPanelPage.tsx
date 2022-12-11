@@ -7,6 +7,7 @@ import {SubmitHandler, useForm} from "react-hook-form";
 import {useAppDispatch} from "../../../Redux/store";
 import {createPath} from "react-router-dom";
 import {createPost} from "../../../Redux/Slices/BlogSlice/BlogAsyncActions";
+import {createWork} from "../../../Redux/Slices/PortfolioSlice/PortfolioAsyncActions";
 
 interface OwnProps {
 }
@@ -17,7 +18,10 @@ type Inputs = {
     author: string,
     cover_img: string,
     category: string,
+    link: string
+
 };
+
 
 type Props = OwnProps;
 
@@ -29,6 +33,10 @@ const AdminPanelPage: FunctionComponent<Props> = (props) => {
         console.log(data)
         dispatch(createPost(data))
     };
+
+    const onSubmit2: SubmitHandler<Inputs> = data => {
+        dispatch(createWork(data))
+    };
     const mdParser = new MarkdownIt(/* Markdown-it options */);
     const [text, setText] = React.useState("")
 // Finish!
@@ -38,6 +46,7 @@ const AdminPanelPage: FunctionComponent<Props> = (props) => {
 
     return (
         <>
+            <div >Добавить статью</div>
             <form onSubmit={handleSubmit(onSubmit)}>
                 <MdEditor style={{height: '500px'}} renderHTML={text => mdParser.render(text)}
                           onChange={handleEditorChange}/>
@@ -47,6 +56,17 @@ const AdminPanelPage: FunctionComponent<Props> = (props) => {
                 <input type="text" placeholder={"category"} {...register("category")}/>
                 <button>GO</button>
             </form>
+
+            <div>Добавить Работу</div>
+            <form onSubmit={handleSubmit(onSubmit2)}>
+                <input type="text" placeholder={"title"} {...register("title")}/>
+                <input type="text" placeholder={"author"} {...register("author")}/>
+                <input type="text" placeholder={"cover_img"} {...register("cover_img")}/>
+                <input type="text" placeholder={"link"} {...register("link")}/>
+                <input type="text" placeholder={"category"} {...register("category")}/>
+                <button>GO</button>
+            </form>
+
         </>
     );
 };

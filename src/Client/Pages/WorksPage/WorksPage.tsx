@@ -6,7 +6,7 @@ import PrimaryButton from "../../Components/Buttons/PrimaryButton/PrimaryButton"
 import ServiceItem from "../../Components/ServiceItem/ServiceItem";
 import {useTranslation} from "react-i18next";
 import s from "./WorksPage.module.scss"
-import {useParams} from "react-router-dom";
+import {useNavigate, useParams} from "react-router-dom";
 import {useAppDispatch} from "../../../Redux/store";
 import {getCategoryWorks} from "../../../Redux/Slices/PortfolioSlice/PortfolioAsyncActions";
 import {useSelector} from "react-redux";
@@ -24,6 +24,7 @@ const WorksPage: FunctionComponent<Props> = (props) => {
     const portfolioState = useSelector((state:any) => state.portfolioSlice);
 
     React.useEffect(()=> {
+        window.scrollTo(0, 0)
         if (params.category) {
             if (params.category === "sites"){
                 setType("Сайты, лендинги, интерфейсы")
@@ -52,6 +53,8 @@ const WorksPage: FunctionComponent<Props> = (props) => {
 
     },[])
 
+    const navigate = useNavigate()
+
     console.log(type)
     return (
       <div className={s.portfolio}>
@@ -70,9 +73,9 @@ const WorksPage: FunctionComponent<Props> = (props) => {
               </div>
           </div>
           <div className={s.block_service}>
-              <ServiceItem title={t("2D-Графика, обложки, афиши промо и анимации")}/>
-              <ServiceItem title={t("3D-Графика, NFT, анимация и визуализация")}/>
-              <ServiceItem title={t("Брендинг, упаковка продукта, фирменный стиль")}/>
+              <ServiceItem title={t("2D-Графика, обложки, афиши промо и анимации")} action={()=>navigate("/portfolio/2d_all")}/>
+              <ServiceItem title={t("3D-Графика, NFT, анимация и визуализация")} action={()=>navigate("/portfolio/3d_all")}/>
+              <ServiceItem title={t("Брендинг, упаковка продукта, фирменный стиль")} action={()=>navigate("/portfolio/branding_all")}/>
           </div>
       </div>
   );

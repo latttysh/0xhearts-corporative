@@ -1,12 +1,19 @@
 import React, { FunctionComponent } from 'react';
 import s from "./PortfolioPage.module.scss"
 import artist from "../../Assets/img/artist.png"
+import buda from "../../Assets/img/buda.svg"
+import pic from "../../Assets/img/pic.svg"
 import WorkItem from "../../Components/WorkItem/WorkItem";
 import PrimaryButton from "../../Components/Buttons/PrimaryButton/PrimaryButton";
 import SecondaryButton from "../../Components/Buttons/SecondaryButton/SecondaryButton";
 import PortfolioItem from "../../Components/PortfolioItem/PortfolioItem";
 import ServiceItem from "../../Components/ServiceItem/ServiceItem";
 import {useTranslation} from "react-i18next";
+import {useNavigate, useParams} from "react-router-dom";
+import {getCategoryWorks} from "../../../Redux/Slices/PortfolioSlice/PortfolioAsyncActions";
+import {useAppDispatch} from "../../../Redux/store";
+import {useSelector} from "react-redux";
+import {WorkType} from "../../../Redux/Slices/PortfolioSlice/PortfolioTypes";
 
 interface OwnProps {}
 
@@ -14,10 +21,33 @@ type Props = OwnProps;
 
 const PortfolioPage: FunctionComponent<Props> = (props) => {
     const { t } = useTranslation();
+    const navigate = useNavigate()
 
-  return (
+    const params = useParams()
+    const dispatch = useAppDispatch()
+
+    const [type,setType] = React.useState("")
+    const portfolioState = useSelector((state:any) => state.portfolioSlice);
+
+    React.useEffect(()=> {
+        window.scrollTo(0, 0)
+        if (params.category) {
+            if (params.category === "2d_all"){
+                setType("2D-Графика, обложки, афиши промо и анимации")
+            } else if (params.category === "3d_all") {
+                setType("3D-Графика, NFT, анимация и визуализация")
+            } else if (params.category === "branding_all") {
+                setType("Брендинг, упаковка продукта, фирменный стиль")
+            }
+            dispatch(getCategoryWorks(params.category))
+        }
+
+    },[])
+
+
+    return (
       <div className={s.portfolio}>
-          <div className={s.title}>{t("Обложки, рисунки, афиши, промо и анимации")}</div>
+          <div className={s.title}>{t(type)}</div>
           <div className={s.promo}>
               <div className={s.info}>
                   <div className={s.description}>
@@ -25,42 +55,45 @@ const PortfolioPage: FunctionComponent<Props> = (props) => {
                   </div>
                   <div className={s.artists}>
                       <img src={artist} alt="artist"/>
-                      <img src={artist} alt="artist"/>
-                      <img src={artist} alt="artist"/>
-                      <img src={artist} alt="artist"/>
+                      <img src={buda} alt="artist"/>
+                      <img src={pic} alt="artist"/>
                   </div>
               </div>
 
           </div>
 
-          <div className={s.title_block}>{t("Обложки")}</div>
-          <div className={s.block}>
-              <div className={s.items}>
-                  <WorkItem link={"1"} img={"1"} title={"1"} author={"1"}/>
+          {
+              portfolioState.works.filter((e:any, i:any) =>portfolioState.works.findIndex((a: { [x: string]: any; }) => a["category"] === e["category"]) === i).map((category: any) => {
+                  return (
+                      <>
+                          <div className={s.title_block}>{t(category.category)}</div>
+                          <div className={s.block}>
+                              <div className={s.items}>
+                                  {
+                                      portfolioState.works.filter((filter_item:WorkType) => filter_item.category === category.category).map((work: WorkType) => {
+                                          return (
+                                              <WorkItem link={work.link} img={work.cover_img} title={work.title} author={work.author}/>
 
-              </div>
-              <div className={s.buttons}>
-                  <SecondaryButton title={t("Больше работ")} action={()=>console.log(123)}/>
-                  <PrimaryButton title={t("Начать проект")} action={()=>console.log(123)}/>
-              </div>
-          </div>
+                                          )
+                                      })
+                                  }
+                              </div>
+                              <div className={s.buttons}>
+                                  <SecondaryButton title={t("Больше работ")} action={()=>navigate(`/portfolio/works/${category.category}`)}/>
+                                  <PrimaryButton title={t("Начать проект")} action={()=>navigate('/send')}/>
+                              </div>
+                          </div>
+                      </>
+                  )
+              })
+          }
 
-          <div className={s.title_block}>{t("Афиши, промо и анимации")}</div>
-          <div className={s.block}>
-              <div className={s.items}>
-                  <WorkItem link={"1"} img={"1"} title={"1"} author={"1"}/>
 
-              </div>
-              <div className={s.buttons}>
-                  <SecondaryButton title={t("Больше работ")} action={()=>console.log(123)}/>
-                  <PrimaryButton title={t("Начать проект")} action={()=>console.log(123)}/>
-              </div>
-          </div>
 
           <div className={s.block_service}>
-                  <ServiceItem title={t("2D-Графика, обложки, афиши промо и анимации")}/>
-                  <ServiceItem title={t("3D-Графика, NFT, анимация и визуализация")}/>
-                  <ServiceItem title={t("Брендинг, упаковка продукта, фирменный стиль")}/>
+                  <ServiceItem title={t("2D-Графика, обложки, афиши промо и анимации")} action={()=>navigate("/2d_all")}/>
+                  <ServiceItem title={t("3D-Графика, NFT, анимация и визуализация")} action={()=>navigate("/3d_all")}/>
+                  <ServiceItem title={t("Брендинг, упаковка продукта, фирменный стиль")} action={()=>navigate("/branding_all")}/>
           </div>
       </div>
   );

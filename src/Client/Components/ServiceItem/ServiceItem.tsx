@@ -6,6 +6,7 @@ import {useTranslation} from "react-i18next";
 interface OwnProps {
     title: string
     img? :string
+    action: ()=>void
 }
 
 type Props = OwnProps;
@@ -20,7 +21,7 @@ const ServiceItem: FunctionComponent<Props> = (props) => {
           <div className={s.service_text}>
               {props.title}
           </div>
-          <SecondaryButton title={t("Смотреть")} action={()=>navigate("/portfolio")}/>
+          <SecondaryButton title={t("Смотреть")} action={()=>props.action()}/>
 
       </div>
   );

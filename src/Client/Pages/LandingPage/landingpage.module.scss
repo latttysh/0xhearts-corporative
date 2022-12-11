@@ -8,8 +8,32 @@
     color: #F9F9F9;
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 15px;
     margin-bottom: 32px;
+    .scroll{
+      height: 1.2em;
+      flex: 1 1 auto;
+      line-height: 1.2em;
+      margin-right: auto;
+      position: relative;
+      overflow: hidden;
+      font-weight: 450;
+      font-size: 48px;
+      /* identical to box height, or 117% */
+
+      letter-spacing: -0.01em;
+
+      /* White/Clean */
+
+      color: #F9F9F9;
+      //text-align: center;
+    }
+    .scroll > span {
+      position: absolute;
+      top: 0;
+      left: 0;
+      animation: slide 15s infinite;
+    }
   }
   .promo{
     width: 100%;
@@ -67,11 +91,46 @@
     gap: 40px;
   }
 }
-
+@keyframes slide {
+  0% {
+    top: 0;
+  }
+  10% {
+    top: -1.2em;
+  }
+  20% {
+    top: -2.4em;
+  }
+  30% {
+    top: -3.6em;
+  }
+  40% {
+    top: -4.8em;
+  }
+  50% {
+    top: -6.0em;
+  }
+  60% {
+    top: -7.2em;
+  }
+  70% {
+    top: -8.4em;
+  }
+  80% {
+    top: -9.6em;
+  }
+  90% {
+    top: -10.8em;
+  }
+  100% {
+    top: 0em;
+  }
+}
 .news{
   padding: 32px 40px;
   background: #070615;
   border-radius: 16px;
+  margin-bottom: 64px;
   .header{
     display: flex;
     align-items: center;
@@ -101,6 +160,34 @@
     align-items: center;
     gap: 40px;
   }
+}
+
+.workers{
+  max-width: 1190px;
+  .title{
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 48px;
+    letter-spacing: -0.01em;
+    color: #F9F9F9;
+  }
+  .worker{
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 48px;
+    letter-spacing: -0.01em;
+    color: #F9F9F9;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+  }
+  margin-bottom: 64px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  column-gap: 4px;
 }
 
 @media (max-width: 1120px) {

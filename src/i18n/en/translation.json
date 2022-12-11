@@ -56,7 +56,10 @@
   "3D-графика": "3D-graphics",
   "Анимации": "Animations",
   "Афиши": "Posters",
-  "2D-графика" : "2D-graphics"
+  "2D-графика" : "2D-graphics",
+  "covers": "Обложки",
+  "Covers": "Обложки",
+  "animations": "Анимации"
 
 
 }

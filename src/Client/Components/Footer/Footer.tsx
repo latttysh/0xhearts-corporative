@@ -7,6 +7,9 @@ import tg from "../../Assets/img/tg.svg"
 import mail from "../../Assets/img/mail.svg"
 import {useTranslation} from "react-i18next";
 import {SubmitHandler, useForm} from "react-hook-form";
+import {useAppDispatch} from "../../../Redux/store";
+import {sendForm} from "../../../Redux/Slices/Form/FormAsyncActions";
+import ThanksModal from "../ThanksModal/ThanksModal";
 interface OwnProps {}
 type Inputs = {
     name: string,
@@ -17,12 +20,20 @@ type Props = OwnProps;
 
 const Footer: FunctionComponent<Props> = (props) => {
     const { t } = useTranslation();
+    const dispatch = useAppDispatch()
 
     const { register, handleSubmit, watch, formState: { errors } } = useForm<Inputs>();
-    const onSubmit: SubmitHandler<Inputs> = data => console.log(data);
+    const onSubmit: SubmitHandler<Inputs> = data => {
+        dispatch(sendForm(data))
+        setIsSend(true)
+    };
+
+    const [isSend, setIsSend] = React.useState(false)
 
   return (
       <div className={s.footer}>
+          {isSend && <ThanksModal close={()=>setIsSend(false)}/>
+          }
           <div className={s.send}>
               <div className={s.header}>
                   <div className={s.text}>
@@ -35,10 +46,10 @@ const Footer: FunctionComponent<Props> = (props) => {
                   <div className={s.light}></div>
                   <form onSubmit={handleSubmit(onSubmit)}>
                       <div className={s.client_info}>
-                          <input type="text" placeholder={`${t("Как к вам обращаться?")}`} {...register("name")}/>
-                          <input type="text" placeholder={`${t("Контактные данные")}`} {...register("contact")}/>
+                          <input type="text" required placeholder={`${t("Как к вам обращаться?")}`} {...register("name")}/>
+                          <input type="text" required placeholder={`${t("Контактные данные")}`} {...register("contact")}/>
                       </div>
-                      <textarea placeholder={`${t("Описание вашей задачи")}`} {...register("description")}/>
+                      <textarea required placeholder={`${t("Описание вашей задачи")}`} {...register("description")}/>
                       <button type={"submit"}>{t("Отправить нам")}</button>
                   </form>
               </div>

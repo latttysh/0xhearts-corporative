@@ -1,0 +1,94 @@
+
+.wrapper {
+  position: fixed;
+  background: rgba(0, 0, 0, 0.5);
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999999;
+
+  .modal {
+    background: linear-gradient(180deg, rgba(17, 15, 40, 0.72) 0%, rgba(7, 6, 21, 0.72) 100%);
+    backdrop-filter: blur(36px);
+    /* Note: backdrop-filter has minimal browser support */
+
+    border-radius: 16px;
+    max-width: 600px;
+    width: 100%;
+    padding: 32px;
+    .header{
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      .title{
+        font-weight: 450;
+        max-width: 317px;
+        font-size: 24px;
+        line-height: 36px;
+        letter-spacing: -0.01em;
+        color: #F9F9F9;
+        margin-bottom: 8px;
+      }
+      img{
+        cursor: pointer;
+      }
+    }
+    .subtitle{
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 28px;
+      /* or 175% */
+      max-width: 317px;
+
+
+      /* White/Text-Hint */
+
+      color: #A7A7D1;
+      margin-bottom: 24px;
+
+    }
+    .tg {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 12px;
+      img{
+        width: 36px;
+      }
+      .text{
+        font-weight: 450;
+        font-size: 24px;
+        line-height: 36px;
+        letter-spacing: -0.01em;
+        color: #F9F9F9;
+        span{
+          color: rgba(38, 151, 255, 1);
+        }
+      }
+    }
+
+    .mail{
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      img{
+        width: 36px;
+      }
+      .text{
+        font-weight: 450;
+        font-size: 24px;
+        line-height: 36px;
+        letter-spacing: -0.01em;
+        color: #F9F9F9;
+        span{
+          color: rgba(160, 86, 255, 1);
+        }
+      }
+    }
+
+  }
+}
