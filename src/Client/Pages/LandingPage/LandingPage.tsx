@@ -123,7 +123,7 @@ const LandingPage: FunctionComponent<Props> = (props) => {
             <section id={"workers"}>
 
                 <div className={s.workers}>
-                    <div className={s.title}>We are in <span>0xHearts</span> —</div>
+                    <div className={s.title}>{t("Мы в")} <span>0xHearts</span> —</div>
                     <div className={s.worker}>
                         <img src={sl} alt="worker"/><span>{t("Семён Латыш")},</span></div>
                     <div className={s.worker}>
