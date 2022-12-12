@@ -32,12 +32,12 @@ const AdminPanelPage: FunctionComponent<Props> = (props) => {
     const onSubmit: SubmitHandler<Inputs> = data => {
         data["text"] = text
         console.log(data)
-        dispatch(createPost(data))
+        dispatch(createPost(data)).then((res:any) => window.location.reload())
     };
 
     const onSubmit2: SubmitHandler<Inputs> = data => {
         console.log(data)
-        dispatch(createWork(data))
+        dispatch(createWork(data)).then((res:any) => window.location.reload())
     };
     const mdParser = new MarkdownIt(/* Markdown-it options */);
     const [text, setText] = React.useState("")
@@ -61,11 +61,24 @@ const AdminPanelPage: FunctionComponent<Props> = (props) => {
 
             <div>Добавить Работу</div>
             <form onSubmit={handleSubmit(onSubmit2)} className={s.form}>
+                <select {...register("category")} placeholder={"Категория"}>
+                    <option value="Covers">Обложки</option>
+                    <option value="Posters">Афиши</option>
+                    <option value="Promos_and_animations">Промо и анимации</option>
+                    <option value="2D-Graphics">2D-Графика</option>
+                    <option value="3D-Graphics">3D-Графика</option>
+                    <option value="NFT">NFT</option>
+                    <option value="Animation_and_other">Анимация и прочее</option>
+                    <option value="Sites">Сайты</option>
+                    <option value="Landings">Лендинги</option>
+                    <option value="Interfaces">Интерфейсы</option>
+                    <option value="Branding_and_logos">Брендинг и логотипы</option>
+                </select>
                 <input type="text" placeholder={"Название"} {...register("title")}/>
                 <input type="text" placeholder={"Автор"} {...register("author")}/>
                 <input type="text" placeholder={"Обложка"} {...register("cover_img")}/>
                 <input type="text" placeholder={"Ссылка на исходник"} {...register("link")}/>
-                <input type="text" placeholder={"Категория"} {...register("category")}/>
+
                 <span>Включить в топ 8?</span>
                 <input type="checkbox"  {...register("is_top")}/>
                 <button>GO</button>
