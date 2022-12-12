@@ -55,7 +55,7 @@ const WorksPage: FunctionComponent<Props> = (props) => {
 
         }
 
-    },[])
+    },[params])
 
     const navigate = useNavigate()
 

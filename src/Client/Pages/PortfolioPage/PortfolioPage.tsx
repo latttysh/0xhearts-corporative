@@ -33,6 +33,7 @@ const PortfolioPage: FunctionComponent<Props> = (props) => {
     React.useEffect(()=> {
         window.scrollTo(0, 0)
         if (params.category) {
+            console.log(123)
             if (params.category === "2d_all"){
                 setType("2D-Графика, обложки, афиши промо и анимации")
             } else if (params.category === "3d_all") {
@@ -45,7 +46,7 @@ const PortfolioPage: FunctionComponent<Props> = (props) => {
             dispatch(getCategoryWorks(params.category))
         }
 
-    },[])
+    },[params])
 
 
     return (
