@@ -83,7 +83,7 @@ const LandingPage: FunctionComponent<Props> = (props) => {
                     a.click()
                 }}/>
 
-                <ServiceItem title={t("Сайты, лендинги, интерфейсы")} video={false} img={cryptox} action={()=>navigate("/portfolio/works/sites")}/>
+                <ServiceItem title={t("Сайты, лендинги, интерфейсы")} video={false} img={cryptox} action={()=>navigate("/portfolio/sites_all")}/>
                 <ServiceItem img={"/Videos/covers.mp4"} video={true} title={t("2D-Графика, обложки, афиши промо и анимации")} action={()=>navigate("/portfolio/2d_all")}/>
                 <ServiceItem img={"/Videos/3d.mp4"} video={true} title={t("3D-Графика, NFT, анимация и визуализация")} action={()=>navigate("/portfolio/3d_all")}/>
                 <ServiceItem title={t("Брендинг, упаковка продукта, фирменный стиль")} img={branding} video={false} action={()=>navigate("/portfolio/branding_all")}/>
@@ -143,7 +143,7 @@ const LandingPage: FunctionComponent<Props> = (props) => {
                     <div className={s.worker}>
                         <img src={ai} alt="worker"/><span>{t("Амир Исмагилов")},</span></div>
                     <div className={s.worker}>
-                        <img src={zs} alt="worker"/><span>{t("Захар Самарченко,")}</span>
+                        <img src={zs} alt="worker"/><span>{t("Захар Самарченко")},</span>
                     </div>
                     <div className={s.worker}>
                         <img src={dv} alt="worker"/><span>{t("Даниэль Волков")},</span></div>

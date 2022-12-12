@@ -10,6 +10,7 @@ export interface WorkType {
 export interface PortfolioInitialStateType {
     status: string,
     works: WorkType[]
+    categories: {}
 }
 
 export interface newWorkType {

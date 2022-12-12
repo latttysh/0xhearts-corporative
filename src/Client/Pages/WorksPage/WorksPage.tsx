@@ -27,26 +27,29 @@ const WorksPage: FunctionComponent<Props> = (props) => {
     React.useEffect(()=> {
         window.scrollTo(0, 0)
         if (params.category) {
-            if (params.category === "sites"){
-                setType("Сайты, лендинги, интерфейсы")
-            } else if (params.category === "covers") {
+            if (params.category === "Sites"){
+                setType("Сайты")
+            } else if (params.category === "Covers") {
                 setType("Обложки")
-            } else if (params.category === "2d") {
+            } else if (params.category === "2D-Graphics") {
                 setType("2D-графика")
-            } else if (params.category === "posters") {
+            } else if (params.category === "Posters") {
                 setType("Афиши")
-            } else if (params.category === "animations") {
-                setType("Анимации")
-            } else if (params.category === "3d") {
+            } else if (params.category === "Promos_and_animations") {
+                setType("Промо и анимации")
+            } else if (params.category === "3D-Graphics") {
                 setType("3D-графика")
-            } else if (params.category === "nft") {
+            } else if (params.category === "NFT") {
                 setType("NFT")
-            }  else if (params.category === "branding") {
-                setType("Брендинг")
-            }  else if (params.category === "packaging") {
-                setType("Упаковка продукта")
-            } else if (params.category === "identity") {
-                setType("Фирменный стиль")
+            }  else if (params.category === "Branding_and_logos") {
+                setType("Брендинг и логотипы")
+            }else if (params.category === "Interfaces") {
+                setType("Интерфейсы")
+            } else if (params.category === "Landings") {
+                setType("Лендинги")
+            }
+            else if (params.category === "Animation_and_other") {
+                setType("Анимация и прочее")
             }
             dispatch(getCategoryWorks(params.category))
 
@@ -56,7 +59,7 @@ const WorksPage: FunctionComponent<Props> = (props) => {
 
     const navigate = useNavigate()
 
-    console.log(type)
+    console.log(portfolioState.categories[type])
     return (
       <div className={s.portfolio}>
           <div className={s.title}>{t(type)}</div>

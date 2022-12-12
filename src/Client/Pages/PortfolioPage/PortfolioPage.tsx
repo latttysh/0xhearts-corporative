@@ -39,6 +39,8 @@ const PortfolioPage: FunctionComponent<Props> = (props) => {
                 setType("3D-Графика, NFT, анимация и визуализация")
             } else if (params.category === "branding_all") {
                 setType("Брендинг, упаковка продукта, фирменный стиль")
+            } else if (params.category === "sites_all") {
+                setType("Сайты, лендинги, интерфейсы")
             }
             dispatch(getCategoryWorks(params.category))
         }
@@ -63,11 +65,12 @@ const PortfolioPage: FunctionComponent<Props> = (props) => {
 
           </div>
 
-          {
+          {portfolioState.status === "loaded" &&
               portfolioState.works.filter((e:any, i:any) =>portfolioState.works.findIndex((a: { [x: string]: any; }) => a["category"] === e["category"]) === i).map((category: any) => {
                   return (
                       <>
-                          <div className={s.title_block}>{t(category.category)}</div>
+                          <div className={s.title_block}>{t(portfolioState.categories[category.category])}</div>
+
                           <div className={s.block}>
                               <div className={s.items}>
                                   {
