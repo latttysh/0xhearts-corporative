@@ -39,13 +39,13 @@ const Header: FunctionComponent<Props> = (props) => {
         </NavLink>
 
         <div className={nav ? `${s.navigation} ${s.active}` : s.navigation} >
-          <NavLink to={'/portfolio'} onClick={()=>setNav(false)}>
+          <HashLink smooth to="/#services" onClick={()=>setNav(false)}>
             <div className={s.navigation_item}>{t("Наши работы")}</div>
-          </NavLink>
+          </HashLink>
           <NavLink to={'/blog'} onClick={()=>setNav(false)}>
             <div className={s.navigation_item}>{t("Блог")}</div>
           </NavLink>
-          <HashLink smooth to="#workers">
+          <HashLink smooth to="/#workers" onClick={()=>setNav(false)}>
             <div className={s.navigation_item}>{t("О нас")}</div>
           </HashLink>
           <NavLink to={'/contacts'} onClick={()=>setNav(false)}>
@@ -54,13 +54,13 @@ const Header: FunctionComponent<Props> = (props) => {
         </div>
       </div>
       <div className={s.actions}>
-        <div className={s.language}>
+        <div className={s.language}  onClick={changeLanguage}>
           <div className={s.language_flag}>
             {
               i18n.language === 'ru' ? <USA/> : <RU/>
             }
           </div>
-          <div className={s.language_text} onClick={changeLanguage}>{t("Switch to English")}</div>
+          <div className={s.language_text} >{t("Switch to English")}</div>
         </div>
         <PrimaryButton title={t("Начать проект")} action={() => navigate('/send')} />
         <div onClick={() => setNav(!nav)} className={s.burger_menu}>

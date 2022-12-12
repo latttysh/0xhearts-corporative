@@ -66,7 +66,7 @@ const LandingPage: FunctionComponent<Props> = (props) => {
 {/*                    <video src={animbg} height={"100%"} width={"100%"} className={s.animbg}>
                         <source src={"../../Assets/img/anim_bg.mp4"} type={"video/mp4"}/>
                     </video>*/}
-                    <video controls={false} autoPlay={true} loop={true} muted={true} className={s.animbg}>
+                    <video playsInline={true} width={"100%"} height={"100%"} style={{objectFit: "cover"}} controls={false} autoPlay={true} loop={true} muted={true} className={s.animbg}>
                     <source src="/Videos/anim_bg.mp4" type="video/mp4" />
                     </video>
                     <div className={s.promo_text}>
@@ -75,7 +75,7 @@ const LandingPage: FunctionComponent<Props> = (props) => {
                 </div>
 
             </section>
-            <section className={s.services}>
+            <section className={s.services} id={"services"}>
                 <ServiceItem title={t("Полный дизайн сервиса для приёма SMS — smsverification.xyz")} img={smsverif} action={()=>{
                     const a = document.createElement("a")
                     a.href = "https://www.behance.net/gallery/158746783/SMSVerification-Website-Branding"
@@ -123,7 +123,7 @@ const LandingPage: FunctionComponent<Props> = (props) => {
             <section id={"workers"}>
 
                 <div className={s.workers}>
-                    <div className={s.title}>We are in 0xHearts —</div>
+                    <div className={s.title}>We are in <span>0xHearts</span> —</div>
                     <div className={s.worker}>
                         <img src={sl} alt="worker"/><span>{t("Семён Латыш")},</span></div>
                     <div className={s.worker}>
@@ -148,7 +148,7 @@ const LandingPage: FunctionComponent<Props> = (props) => {
                     <div className={s.worker}>
                         <img src={dv} alt="worker"/><span>{t("Даниэль Волков")},</span></div>
                     <div className={s.worker}>
-                        <img src={ah} alt="worker"/><span>{t("Алексей Хондоев и ")} </span> <div> </div></div>
+                        <img src={ah} alt="worker"/><span>{t("Алексей Хондоев и")} </span> <div> </div></div>
                     <div className={s.worker}>
                         <img src={mr} alt="worker"/> <span>{t("Максим Розочкин.")}</span></div>
                 </div>

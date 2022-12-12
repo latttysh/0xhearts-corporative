@@ -18,6 +18,8 @@
     right: 0;
     z-index: -1;
     bottom: -24px;
+    width: 100%;
+    object-fit: cover;
   }
   &:first-child{
     grid-row-start: 1;
@@ -29,10 +31,10 @@
   &_text{
     font-weight: 400;
     font-size: 24px;
-    line-height: 36px;
+    line-height: 32px;
     letter-spacing: -0.01em;
     color: #F9F9F9;
-    max-width: 400px;
-    max-height: 80px;
+    max-width: 415px;
+    height: 72px;
   }
 }

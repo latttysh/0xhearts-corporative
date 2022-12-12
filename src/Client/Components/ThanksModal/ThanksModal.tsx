@@ -13,7 +13,7 @@ type Props = OwnProps;
 const ThanksModal: FunctionComponent<Props> = (props) => {
 
     return (
-        <div className={s.wrapper}>
+        <div className={s.wrapper} onClick={e => (e.currentTarget === e.target) && props.close()}>
             <div className={s.modal}>
                 <div className={s.header}>
                     <div className={s.title}>Спасибо! Менеджер скоро

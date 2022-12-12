@@ -11,6 +11,7 @@ import {useAppDispatch} from "../../../Redux/store";
 import {getCategoryWorks} from "../../../Redux/Slices/PortfolioSlice/PortfolioAsyncActions";
 import {useSelector} from "react-redux";
 import {WorkType} from "../../../Redux/Slices/PortfolioSlice/PortfolioTypes";
+import branding from "../../Assets/img/branding.jpg";
 
 interface OwnProps {}
 
@@ -73,9 +74,9 @@ const WorksPage: FunctionComponent<Props> = (props) => {
               </div>
           </div>
           <div className={s.block_service}>
-              <ServiceItem title={t("2D-Графика, обложки, афиши промо и анимации")} action={()=>navigate("/portfolio/2d_all")}/>
-              <ServiceItem title={t("3D-Графика, NFT, анимация и визуализация")} action={()=>navigate("/portfolio/3d_all")}/>
-              <ServiceItem title={t("Брендинг, упаковка продукта, фирменный стиль")} action={()=>navigate("/portfolio/branding_all")}/>
+              <ServiceItem img={"/Videos/covers.mp4"} video={true} title={t("2D-Графика, обложки, афиши промо и анимации")} action={()=>navigate("/portfolio/2d_all")}/>
+              <ServiceItem img={"/Videos/3d.mp4"} video={true} title={t("3D-Графика, NFT, анимация и визуализация")} action={()=>navigate("/portfolio/3d_all")}/>
+              <ServiceItem title={t("Брендинг, упаковка продукта, фирменный стиль")} img={branding} video={false} action={()=>navigate("/portfolio/branding_all")}/>
           </div>
       </div>
   );

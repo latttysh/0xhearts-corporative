@@ -21,7 +21,7 @@ const ServiceItem: FunctionComponent<Props> = (props) => {
       <div className={s.service}>
           {
               props.video ?
-                  <video controls={false} autoPlay={true} loop={true} muted={true} className={s.bg}>
+                  <video controls={false} height={"100%"} style={{objectFit: "cover", top: "0"}} width={"100%"} playsInline={true} autoPlay={true} loop={true} muted={true} className={s.bg}>
                       <source src={props.img} type="video/mp4" />
                   </video>
                   : props.img && <img src={props.img} alt="bg" className={s.bg}/>

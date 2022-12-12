@@ -34,13 +34,16 @@ const Footer: FunctionComponent<Props> = (props) => {
       <div className={s.footer}>
           {isSend && <ThanksModal close={()=>setIsSend(false)}/>
           }
-          <div className={s.send}  style={{backgroundImage: `url(${stroke})`}}>
+          <div className={s.send}
+               // style={{backgroundImage: `url(${stroke}) fixed`}}
+          >
               <div className={s.header}>
                   <div className={s.text}>
                       <div className={s.title}>{t("Давайте работать над вашим проектом")}</div>
                       <div className={s.description}>{t("Заполните онлайн-бриф с описанием вашей задачи или свяжитесь с нами через Telegram, почту и другие контакты")}</div>
+                      <img src={stroke} alt="stroke" className={s.bg_stroke}/>
                   </div>
-                  <img src={arrow} alt="arrow"/>
+                  <img src={arrow} alt="arrow" className={s.arrow}/>
               </div>
               <div className={s.form}>
                   <div className={s.light}></div>

@@ -54,11 +54,11 @@ const PortfolioPage: FunctionComponent<Props> = (props) => {
                   <div className={s.description}>
                       {t("В команде 0xHearts работают сразу несколько дизайнеров, которые занимаются этими направлениями.")}
                   </div>
-                  <div className={s.artists}>
+{/*                  <div className={s.artists}>
                       <img src={artist} alt="artist"/>
                       <img src={buda} alt="artist"/>
                       <img src={pic} alt="artist"/>
-                  </div>
+                  </div>*/}
               </div>
 
           </div>

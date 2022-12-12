@@ -1,5 +1,5 @@
 .header {
-  padding: 40px 10px;
+  padding: 40px 0px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -111,7 +111,9 @@
     .actions {
       gap: 20px;
       .language {
-        display: none;
+        .language_text{
+          display: none;
+        }
       }
     }
   }
