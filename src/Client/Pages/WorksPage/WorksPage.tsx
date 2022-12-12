@@ -65,7 +65,7 @@ const WorksPage: FunctionComponent<Props> = (props) => {
           <div className={s.title}>{t(type)}</div>
           <div className={s.block}>
               <div className={s.items}>
-                  {
+                  {portfolioState.status === "loaded" &&
                       portfolioState.works.map((work:WorkType) => {
                           return <WorkItem img={work.cover_img} author={work.author} title={work.title} link={work.link}/>
 
