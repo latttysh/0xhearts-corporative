@@ -10,13 +10,20 @@ const PrivacyFooter: FunctionComponent<Props> = (props) => {
     const navigate = useNavigate()
     const { t } = useTranslation();
 
+    const onLinkClick =(link:string) => {
+        const a = document.createElement("a")
+        a.href = link
+        a.target ="_blank"
+        a.click()
+    }
+
     return (
       <div className={s.privacy_footer}>
           <div className={s.left}>
-              <div className={s.item}>{t("Наш канал в Telegram")}</div>
+              <div className={s.item} onClick={()=>onLinkClick("https://t.me/the0xhearts")}>{t("Наш канал в Telegram")}</div>
               <div className={s.item}>Instagram</div>
               <div className={s.item}>Twitter</div>
-              <div className={s.item}>Behance</div>
+              <div className={s.item} onClick={()=>onLinkClick("https://behance.com/0xhearts")}>Behance</div>
               <div className={s.item}>Dribbble</div>
               <div className={s.item}>GitHub</div>
               <div className={s.item} onClick={()=>navigate("/privacy")}>Privacy policy</div>
